@@ -174,3 +174,14 @@ def test_user_pass(testrepo):
     url = 'https://github.com/libgit2/TestGitRepository'
     remote = testrepo.remotes.create("bb", url)
     remote.fetch(callbacks=callbacks)
+
+
+@utils.requires_network
+@utils.requires_proxy
+def test_proxy(testrepo):
+    credentials = UserPass("libgit2", "libgit2")
+    callbacks = pygit2.RemoteCallbacks(credentials=credentials)
+
+    url = 'https://github.com/libgit2/TestGitRepository'
+    remote = testrepo.remotes.create("bb", url)
+    remote.fetch(callbacks=callbacks, proxy='http://localhost:8888')

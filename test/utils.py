@@ -49,6 +49,13 @@ requires_network = pytest.mark.skipif(
     reason='Requires network'
 )
 
+with socket.socket(socket.AF_INET6, socket.SOCK_STREAM) as sock:
+    has_proxy = sock.connect_ex(('', 8888)) == 0
+
+requires_proxy = pytest.mark.skipif(
+    not has_proxy,
+    reason='Requires proxy at port 8888'
+)
 
 requires_ssh = pytest.mark.skipif(
     not (pygit2.features & pygit2.GIT_FEATURE_SSH),

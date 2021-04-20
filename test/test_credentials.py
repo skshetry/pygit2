@@ -176,8 +176,9 @@ def test_user_pass(testrepo):
     remote.fetch(callbacks=callbacks)
 
 
-@utils.requires_network
 @utils.requires_proxy
+@utils.requires_network
+@utils.requires_future_libgit2
 def test_proxy(testrepo):
     credentials = UserPass("libgit2", "libgit2")
     callbacks = pygit2.RemoteCallbacks(credentials=credentials)

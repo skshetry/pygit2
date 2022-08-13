@@ -43,6 +43,7 @@ del sys.path[0]
 
 
 libgit2_bin, libgit2_kw = get_libgit2_paths()
+print("libgit2_bin: ", libgit2_bin, "libgit2_kw: ", libgit2_kw)
 
 
 class sdist_files_from_git(sdist):

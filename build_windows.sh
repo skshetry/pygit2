@@ -18,7 +18,7 @@ fi
 $PYTHON -m pip install -U pip wheel
 git clone --depth=1 -b v${LIBGIT2_VERSION} https://github.com/libgit2/libgit2.git libgit2
 cd libgit2
-cmake . -DBUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${PREFIX} -G '${CMAKE_GENERATOR}'
+cmake . -DBUILD_TESTS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "${CMAKE_GENERATOR}"
 cmake --build . --target install
 cd ..
 

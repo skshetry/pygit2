@@ -46,7 +46,7 @@ def _get_libgit2_path():
     libgit2_path = os.getenv('LIBGIT2')
     if libgit2_path is not None:
         print("libgit2_path", libgit2_path)
-        return Path(libgit2_path)
+        return Path(libgit2_path).resolve()
 
     # Default
     if os.name == 'nt':

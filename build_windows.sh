@@ -15,6 +15,7 @@ else
     $PYTHON -m venv $PREFIX
 fi
 
+export LIBGIT2=$PREFIX
 $PYTHON -m pip install -U pip wheel
 git clone --depth=1 -b v${LIBGIT2_VERSION} https://github.com/libgit2/libgit2.git libgit2
 cd libgit2

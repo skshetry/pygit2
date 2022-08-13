@@ -45,6 +45,7 @@ def _get_libgit2_path():
     # LIBGIT2 environment variable takes precedence
     libgit2_path = os.getenv('LIBGIT2')
     if libgit2_path is not None:
+        print("libgit2_path", libgit2_path)
         return Path(libgit2_path)
 
     # Default

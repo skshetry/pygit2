@@ -5,7 +5,7 @@ set -e # Fail fast
 
 PYTHON=${PYTHON:-python3}
 PREFIX="${PREFIX:-$(pwd)/ci/$PYTHON_TAG}"
-
+echo $LIBGIT2
 if [ "$CIBUILDWHEEL" = "1" ]; then
     rm -rf ci
     mkdir ci || true
